@@ -6,6 +6,7 @@
  1. Navigate to your live application.
  1. As you work, remember to navigate to `/git` and **commit often as you work.**
 
-REPOSITORY SETUP NOTES
+## REPOSITORY SETUP NOTES
 1. Created fresh repository to root out bugs.
-2. Adding a trial branch
+2. Adding a trial branch.
+3. Last trial push and merge before porting over code from previous repo.
