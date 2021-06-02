@@ -7,7 +7,7 @@ gem 'bcrypt'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'http'
 gem 'jbuilder', '~> 2.7'
-gem 'puma', '~> 4.1'
+gem 'puma'
 gem "nokogiri", ">= 1.10.8"
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'sprockets', '< 4'
@@ -16,8 +16,6 @@ gem 'pg', '~> 1.1'
 gem 'pundit'
 gem 'awesome_print'
 gem 'devise'
-gem 'faker'
-
 gem 'faker'
 
 group :development do

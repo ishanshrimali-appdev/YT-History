@@ -90,6 +90,7 @@ GEM
     annotate (3.1.1)
       activerecord (>= 3.2, < 7.0)
       rake (>= 10.4, < 14.0)
+    awesome_print (1.9.2)
     bcrypt (3.1.15)
     better_errors (2.6.0)
       coderay (>= 1.0.0)
@@ -209,8 +210,10 @@ GEM
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     public_suffix (4.0.5)
-    puma (4.3.5)
+    puma (5.3.2)
       nio4r (~> 2.0)
+    pundit (2.1.0)
+      activesupport (>= 3.0.0)
     rack (2.2.3)
     rack-protection (2.0.8.1)
       rack
@@ -316,7 +319,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     table_print (1.5.7)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
@@ -355,12 +357,14 @@ PLATFORMS
 DEPENDENCIES
   amazing_print
   annotate
+  awesome_print
   bcrypt
   better_errors (= 2.6)
   binding_of_caller
   bootsnap (>= 1.4.2)
   byebug
   capybara
+  devise
   dotenv-rails
   draft_generators!
   factory_bot_rails
@@ -370,9 +374,10 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.2)
   nokogiri (>= 1.10.8)
-  pg
+  pg (~> 1.1)
   pry-rails
-  puma (~> 4.1)
+  puma (~> 5.0)
+  pundit
   rails (~> 6.0.3, >= 6.0.3.2)
   rails_db (= 2.3.1)
   rspec-html-matchers
@@ -381,14 +386,13 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sprockets (< 4)
-  sqlite3 (~> 1.4.1)
   table_print
   web-console (>= 3.3.0)
   web_git!
   webmock
 
 RUBY VERSION
-   ruby 2.6.6p146
+   ruby 2.6.3p62
 
 BUNDLED WITH
    1.17.3
