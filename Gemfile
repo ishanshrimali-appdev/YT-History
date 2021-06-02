@@ -12,6 +12,11 @@ gem "nokogiri", ">= 1.10.8"
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'sprockets', '< 4'
 gem 'sassc-rails'
+gem 'pg', '~> 1.1'
+gem 'pundit'
+gem 'awesome_print'
+gem 'devise'
+gem 'faker'
 
 gem 'faker'
 
@@ -28,7 +33,6 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'grade_runner', github: 'firstdraft/grade_runner'
   gem 'pry-rails'
-  gem 'sqlite3', '~> 1.4.1'
   gem 'table_print'
   gem 'web_git', github: 'firstdraft/web_git', branch: 'spring2020'
 end
@@ -50,5 +54,4 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
 end
