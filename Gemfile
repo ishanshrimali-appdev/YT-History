@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.6'
+ruby '3.0.1'
 
 gem 'bcrypt'
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -9,9 +9,11 @@ gem 'http'
 gem 'jbuilder', '~> 2.7'
 gem 'puma', '~> 4.1'
 gem "nokogiri", ">= 1.10.8"
-gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
+gem 'rails'
 gem 'sprockets', '< 4'
 gem 'sassc-rails'
+gem 'pg'
+gem 'devise'
 
 gem 'faker'
 
@@ -28,7 +30,6 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'grade_runner', github: 'firstdraft/grade_runner'
   gem 'pry-rails'
-  gem 'sqlite3', '~> 1.4.1'
   gem 'table_print'
   gem 'web_git', github: 'firstdraft/web_git', branch: 'spring2020'
 end
@@ -50,5 +51,4 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
 end
