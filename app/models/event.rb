@@ -9,7 +9,7 @@
 #  weather     :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  track_id    :bigint           not null
+#  track_id    :bigint
 #  user_id     :bigint
 #
 # Indexes
@@ -25,4 +25,6 @@
 class Event < ApplicationRecord
   belongs_to :track
   belongs_to :user
+
+  has_one_attached :file
 end

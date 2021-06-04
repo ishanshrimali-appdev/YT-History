@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :file %>
+    <%= form.file_field :file %>
+  </div>
+
+  <div class="field">
     <%= form.label :track_id %>
     <%= form.text_field :track_id %>
   </div>

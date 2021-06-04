@@ -6,7 +6,7 @@
 #  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  album_id   :bigint           not null
+#  album_id   :bigint
 #
 # Indexes
 #

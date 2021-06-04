@@ -5,8 +5,8 @@
 #  id         :bigint           not null, primary key
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  album_id   :bigint           not null
-#  artist_id  :bigint           not null
+#  album_id   :bigint
+#  artist_id  :bigint
 #
 # Indexes
 #

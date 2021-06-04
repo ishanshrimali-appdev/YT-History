@@ -4,10 +4,16 @@ class EventsController < ApplicationController
   # GET /events or /events.json
   def index
     @events = Event.all
+    @event = Event.new
   end
 
   # GET /events/1 or /events/1.json
   def show
+    # @doc = Nokogiri::HTML(open("#{@event.file}"))
+    # @doc = File.open(@event.file) { |f| Nokogiri::HTML(f) }
+    # @doc = Nokogiri::HTML(@event.file)
+    # require 'open-uri'
+    # @doc = Nokogiri::HTML(URI.open("#{rails_blob_url(@event.file)}"))
   end
 
   # GET /events/new
@@ -64,6 +70,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:track_id, :date, :time, :weather, :temperature)
+      params.require(:event).permit(:track_id, :date, :time, :weather, :temperature, :file)
     end
 end

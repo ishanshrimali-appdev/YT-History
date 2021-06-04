@@ -19,9 +19,18 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.track.title %></td>
-        <td><%= event.track.artists[0].name %></td>
-        <td><%= event.track.album.title %></td>
+        <td><%= if event.track != nil
+                  (event.track.title)
+                end        
+        %></td>
+        <td><%= if event.track.artists[0] != nil
+                  (event.track.artists[0].name)
+                end
+        %></td>
+        <td><%= if event.track.album != nil
+                  (event.track.album.title)
+                end
+        %></td>
         <td><%= event.date %></td>
         <td><%= event.time %></td>
         <td><%= event.weather %></td>
@@ -37,3 +46,14 @@
 <br>
 
 <%= link_to 'New Event', new_event_path %>
+
+<%= form_with(model: @event) do |form| %>
+  <div class="field">
+    <%= form.label :file %>
+    <%= form.file_field :file %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
