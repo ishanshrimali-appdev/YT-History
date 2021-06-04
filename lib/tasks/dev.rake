@@ -4,13 +4,13 @@ task({ :sample_data => :environment}) do
 
     starting = Time.now
 
-  Album.delete_all
-  Albumartistmap.delete_all
-  Artist.delete_all
-  Event.delete_all
-  Track.delete_all
-  Trackartistmap.delete_all
-  User.delete_all
+  Album.destroy_all
+  Albumartistmap.destroy_all
+  Artist.destroy_all
+  Event.destroy_all
+  Track.destroy_all
+  Trackartistmap.destroy_all
+  User.destroy_all
 
   people = Array.new(10) do
     {
@@ -37,55 +37,47 @@ task({ :sample_data => :environment}) do
     p user.errors.full_messages
   end
 
-#   users = User.all
+  users = User.all
 
-#   users.each do |first_user|
-#     users.each do |second_user|
-#       if rand < 0.75
-#         first_user_follow_request = first_user.sent_follow_requests.create(
-#           recipient: second_user,
-#           status: FollowRequest.statuses.values.sample
-#         )
+  users.each do |user|
+    rand(15).times do
+      album = Album.create(
+        title: Faker::Music.album,
+      )  
 
-#         p first_user_follow_request.errors.full_messages
-#       end
+      artist = Artist.create(
+        name: Faker::Music.band
+      )
 
-#       if rand < 0.75
-#         second_user_follow_request = second_user.sent_follow_requests.create(
-#           recipient: first_user,
-#           status: FollowRequest.statuses.values.sample
-#         )
+      albumartistmap = Albumartistmap.create(
+        album_id: album.id,
+        artist_id: artist.id
+      )
 
-#         p second_user_follow_request.errors.full_messages
-#       end
-#     end
-#   end
+      track = Track.create(
+        title: Faker::Music::RockBand.song,
+        album_id: album.id
+      )
 
-#   users.each do |user|
-#     rand(15).times do
-#       photo = user.own_photos.create(
-#         caption: Faker::Quote.jack_handey,
-#         image: "/#{rand(1..10)}.jpeg"
-#       )
+      trackartistmap = Trackartistmap.create(
+        track_id: track.id,
+        artist_id: artist.id
+      )
 
-#       p photo.errors.full_messages
+      event = user.events.create(
+        date: Faker::Date.backward(days: 14),
+        time: Faker::Time.backward(days: 14, period: :evening),
+        temperature: "cool",
+        weather: "overcast",
+        track_id: track.id
+      )
 
-#       user.followers.each do |follower|
-#         if rand < 0.5
-#           photo.fans << follower
-#         end
+      p event.errors.full_messages
 
-#         if rand < 0.25
-#           comment = photo.comments.create(
-#             body: Faker::Quote.jack_handey,
-#             author: follower
-#           )
 
-#           p comment.errors.full_messages
-#         end
-#       end
-#     end
-#   end
+      
+    end
+  end
 
 #   ending = Time.now
 #   p "It took #{(ending - starting).to_i} seconds to create sample data."

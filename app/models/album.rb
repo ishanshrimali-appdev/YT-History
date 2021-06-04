@@ -8,6 +8,6 @@
 #  updated_at :datetime         not null
 #
 class Album < ApplicationRecord
-    has_many :tracks
-    has_many :albumartistmaps
+    has_many :tracks, dependent: :destroy
+    has_many :albumartistmaps, dependent: :destroy
 end
