@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Album:</strong>
+  <%= @albumartistmap.album_id %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @albumartistmap.artist_id %>
+</p>
+
+<%= link_to 'Edit', edit_albumartistmap_path(@albumartistmap) %> |
+<%= link_to 'Back', albumartistmaps_path %>

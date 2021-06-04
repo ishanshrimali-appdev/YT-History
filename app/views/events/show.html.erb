@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Track:</strong>
+  <%= @event.track_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @event.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @event.time %>
+</p>
+
+<p>
+  <strong>Weather:</strong>
+  <%= @event.weather %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @event.temperature %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
+
+<%= link_to image_tag @event.file %>
+
+<%# <%= @doc %>
+
+<%# <%= @event.file.xpath("//character") %>
