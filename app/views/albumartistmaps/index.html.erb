@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Albumartistmaps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Album</th>
+      <th>Artist</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @albumartistmaps.each do |albumartistmap| %>
+      <tr>
+        <td><%= albumartistmap.album_id %></td>
+        <td><%= albumartistmap.artist_id %></td>
+        <td><%= link_to 'Show', albumartistmap %></td>
+        <td><%= link_to 'Edit', edit_albumartistmap_path(albumartistmap) %></td>
+        <td><%= link_to 'Destroy', albumartistmap, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Albumartistmap', new_albumartistmap_path %>

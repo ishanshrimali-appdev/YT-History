@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Track:</strong>
+  <%= @trackartistmap.track_id %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @trackartistmap.artist_id %>
+</p>
+
+<%= link_to 'Edit', edit_trackartistmap_path(@trackartistmap) %> |
+<%= link_to 'Back', trackartistmaps_path %>
