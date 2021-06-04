@@ -18,4 +18,7 @@
 #
 class Track < ApplicationRecord
   belongs_to :album
+
+  has_many :trackartistmaps
+  has_many :events
 end
