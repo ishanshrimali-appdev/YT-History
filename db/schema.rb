@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_04_013009) do
+ActiveRecord::Schema.define(version: 2021_06_04_044841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -45,7 +45,9 @@ ActiveRecord::Schema.define(version: 2021_06_04_013009) do
     t.bigint "track_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
     t.index ["track_id"], name: "index_events_on_track_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "trackartistmaps", force: :cascade do |t|
@@ -83,6 +85,7 @@ ActiveRecord::Schema.define(version: 2021_06_04_013009) do
   add_foreign_key "albumartistmaps", "albums"
   add_foreign_key "albumartistmaps", "artists"
   add_foreign_key "events", "tracks"
+  add_foreign_key "events", "users"
   add_foreign_key "trackartistmaps", "artists"
   add_foreign_key "trackartistmaps", "tracks"
   add_foreign_key "tracks", "albums"
