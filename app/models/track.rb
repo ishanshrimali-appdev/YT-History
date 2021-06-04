@@ -20,5 +20,6 @@ class Track < ApplicationRecord
   belongs_to :album
 
   has_many :trackartistmaps, dependent: :destroy
+  has_many :artists, through: :trackartistmaps
   has_many :events, dependent: :destroy
 end

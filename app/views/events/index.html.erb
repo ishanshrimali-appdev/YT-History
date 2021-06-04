@@ -6,6 +6,8 @@
   <thead>
     <tr>
       <th>Track</th>
+      <th>Artist</th>
+      <th>Album</th>
       <th>Date</th>
       <th>Time</th>
       <th>Weather</th>
@@ -17,14 +19,16 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.track_id %></td>
+        <td><%= event.track.title %></td>
+        <td><%= event.track.artists[0].name %></td>
+        <td><%= event.track.album.title %></td>
         <td><%= event.date %></td>
         <td><%= event.time %></td>
         <td><%= event.weather %></td>
         <td><%= event.temperature %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
